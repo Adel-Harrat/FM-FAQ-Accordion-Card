@@ -70,16 +70,17 @@ function App() {
             {questions.map((question) => (
               <li
                 key={question.id}
-                className="border-b border-tw-light-gray py-3 cursor-pointer"
+                className="border-b border-tw-light-gray py-3 cursor-pointer group"
                 onClick={() =>
                   setSelectedId((s) => (question.id === s ? null : question.id))
                 }
               >
                 <div className="flex items-center justify-between">
                   <p
-                    className={`text-tw-medium-gray ${
-                      question.id === selectedId && "text-black font-bold"
-                    }`}
+                    className={`text-tw-medium-gray group-hover:text-tw-red transition duration-300 ${
+                      question.id === selectedId &&
+                      "text-black font-bold group-hover:text-black"
+                    } `}
                   >
                     {question.question}
                   </p>
